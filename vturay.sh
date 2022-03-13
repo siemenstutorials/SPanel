@@ -20,7 +20,7 @@ read -p "Please Input Node_ID：" id
 docker run -d --name=b${id} \
 -v /root/.cert:/root/.cert \
 -e API=https://v2rayssrgo.xyz \
--e TOKEN=fab93f2c75962143c3 \
+-e TOKEN=fab93f2c5962143c3 \
 -e NODE=${id} \
 -e LICENSE=d094808e1c1f70aa72a966e2226a55da \
 -e SYNCINTERVAL=60 \
