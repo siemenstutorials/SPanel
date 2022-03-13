@@ -10,18 +10,19 @@ docker version > /dev/null || curl -fsSL get.docker.com | bash
 service docker restart
 systemctl start docker
 systemctl enable docker
+systemctl stop firewalld
+systemctl disable firewalld
 
 #config
 read -p "Please Input Node_ID：" id
-read -p "Please Input Lisense：" key
 
 #docker_run
 docker run -d --name=b${id} \
 -v /root/.cert:/root/.cert \
 -e API=https://v2rayssrgo.xyz \
--e TOKEN=fab93f2c-5962-43c3-9c6f-6c590bf06476 \
+-e TOKEN=fab93f2c75962143c3 \
 -e NODE=${id} \
--e LICENSE=${key} \
+-e LICENSE=d094808e1c1f70aa72a966e2226a55da \
 -e SYNCINTERVAL=60 \
 --restart=always \
 --network=host \
